@@ -1,0 +1,20 @@
+include partials/header
+doctype html
+html
+    head
+        +head
+    body
+        +menu(2)
+        .ui.main.text.container.segment(style="margin-top: 2em; margin-bottom: 2em;")
+            .ui.huge.header New Blog
+            form.ui.form(action="/blogs" method="POST")
+                .field
+                    label Title
+                    input(type="text" name="blog[title]" placeholder="title")
+                .field
+                    label Image
+                    input(type="text" name="blog[image]" placeholder="image")
+                .field
+                    label Blog Content
+                    textarea(name="blog[body]")
+                button.ui.black.basic.button Submit

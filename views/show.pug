@@ -1,0 +1,24 @@
+include partials/header
+doctype html
+html
+    head
+        +head
+    body
+        +menu
+        .ui.main.text.container.segment(style="margin-bottom: 2em;")
+            .ui.huge.header= blog.title
+            .ui.top.attached
+                .item(align="center")
+                    img.ui.centred.rounded.image(src=blog.image)
+                .meta
+                    span= blog.created.toDateString()
+                .description
+                    p !{blog.body.replace(/(?:\r\n|\r|\n)/g, '<br/>')}
+                div(style="text-align: right; margin: 1em 1em 0 1em;")
+                    a.ui.blue.inverted.button(href='/blogs/' + blog._id + '/edit' style="float: left;")
+                        i.edit.icon
+                        | Edit
+                    form#delete(action='/blogs/' + blog._id + '?_method=DELETE' method='POST')
+                        button.ui.red.inverted.button(onclick="return confirm('Are you sure?')")
+                            i.trash.icon
+                            | Delete

@@ -1,0 +1,25 @@
+include partials/header
+doctype html
+html
+    head
+        +head
+    body
+        +menu(1)
+        .ui.main.text.container
+            .ui.huge.header.center.aligned
+                h1 RESTful Blog App
+            .ui.top.attached.segment
+                .ui.divided.items
+                    for blog in blogs
+                        .item
+                            .image
+                                img(src=blog.image style="max-height: 100%; max-width: 100%; height: 100%; width: auto;")
+                            .content
+                                p.header(href="/blogs/" + blog.id)= blog.title
+                                .meta
+                                    span= blog.created.toDateString()
+                                .description
+                                    p= blog.body.substring(0, 100) + '...'
+                                .extra
+                                    a.ui.floated.basic.black.button(href="/blogs/" + blog._id) Read More
+                                        i.right.chevron.icon

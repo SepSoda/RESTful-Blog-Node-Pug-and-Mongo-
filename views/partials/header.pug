@@ -1,0 +1,23 @@
+mixin head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title Blog App
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css")
+    link(rel="stylesheet" href="/stylesheets/app.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/semantic.min.js")
+mixin menu(active)
+    if(active === 1)
+        -hm = 'active'
+    else if(active === 2)
+        -np = 'active'
+    .ui.tabular.menu(style="margin-bottom: 2em;")
+        .ui.container
+            .header.item
+                i.code.icon
+                | Blog Site
+            a(href="/" class=hm).item Home
+        a(href="/blogs/new" class=np).item
+            i.edit.icon
+            | New

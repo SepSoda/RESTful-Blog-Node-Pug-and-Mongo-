@@ -1,0 +1,20 @@
+include partials/header
+doctype html
+html
+    head
+        +head
+    body
+        +menu
+        .ui.main.text.container.segment
+            .ui.huge.header= 'Edit ' + blog.title
+            form.ui.form(action="/blogs/"+ blog._id +"?_method=PUT" method="POST")
+                .field
+                    label Title
+                    input(type="text" name="blog[title]" value= blog.title)
+                .field
+                    label Image
+                    input(type="text" name="blog[image]" value= blog.image)
+                .field
+                    label Blog Content
+                    textarea(name="blog[body]")=blog.body
+                button.ui.black.basic.button Submit
