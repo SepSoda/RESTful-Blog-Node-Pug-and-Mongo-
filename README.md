@@ -7,3 +7,7 @@ body-parser [Parse data from user input]
 method-override [Force create Put and Delete method]  
 express-sanitizer [Sanitizes script tag]  
 mongoose [MongoDB client]  
+
+```
+npm install express body-parser method-override express-sanitizer mongoose --save
+```
