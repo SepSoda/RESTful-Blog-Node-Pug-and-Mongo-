@@ -1,12 +1,12 @@
 {
-  "name": "test.one",
+  "name": "rest.blogsite",
   "version": "1.0.0",
-  "description": "Testing NODE with linux",
+  "description": "Rest Blog project",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Shakil",
+  "author": "Shakil Ahmed",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
